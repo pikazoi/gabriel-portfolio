@@ -1,7 +1,5 @@
 # Gabriel Garalde — Personal Portfolio
 
-> A refined, art deco-inspired personal portfolio website showcasing creative work in 3D animation, audio production, and music creation.
-
 ---
 
 ## Live Website
