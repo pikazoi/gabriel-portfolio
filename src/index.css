@@ -1,0 +1,204 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --ink: #0b0906;
+  --ink-2: #161008;
+  --ink-3: #1e150b;
+  --parchment: #f2e4c4;
+  --parchment-dim: #b8a07a;
+  --amber: #b55829;
+  --amber-bright: #d4752e;
+  --gold: #c9953a;
+  --gold-dim: #8a6a2a;
+  --border-gold: rgba(201, 149, 58, 0.25);
+  --border-amber: rgba(181, 88, 41, 0.3);
+  --glow-amber: rgba(181, 88, 41, 0.15);
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: var(--ink);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--ink);
+  color: var(--parchment);
+  font-family: 'Bodoni Moda', serif;
+  overflow-x: hidden;
+}
+
+/* ── CURSOR ────────────────────────────────── */
+@keyframes ball {
+  0%   { width: 50px; height: 50px; }
+  25%  { width: 40px; height: 40px; }
+  50%  { width: 30px; height: 30px; }
+  75%  { width: 20px; height: 20px; }
+  100% { width: 20px; height: 20px; }
+}
+@keyframes ball2 {
+  0%   { width: 20px; height: 20px; }
+  25%  { width: 30px; height: 30px; }
+  50%  { width: 40px; height: 40px; }
+  75%  { width: 50px; height: 50px; }
+  100% { width: 50px; height: 50px; }
+}
+@keyframes ball3 {
+  0%   { width: 12px; height: 12px; }
+  25%  { width: 14px; height: 14px; }
+  50%  { width: 16px; height: 16px; }
+  75%  { width: 18px; height: 18px; }
+  100% { width: 20px; height: 20px; }
+}
+@keyframes ball4 {
+  0%   { width: 20px; height: 20px; }
+  25%  { width: 18px; height: 18px; }
+  50%  { width: 16px; height: 16px; }
+  75%  { width: 14px; height: 14px; }
+  100% { width: 12px; height: 12px; }
+}
+@keyframes changeOp {
+  0%   { opacity: 0.5; }
+  25%  { opacity: 0.2; }
+  50%  { opacity: 0;   }
+  75%  { opacity: 0.2; }
+  100% { opacity: 0.5; }
+}
+
+.cursor-div {
+  border-radius: 50%;
+  position: fixed;
+  z-index: 99999;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+}
+
+.cursor-ring {
+  width: 40px;
+  height: 40px;
+  border: 1.5px solid rgba(181, 88, 41, 0.7);
+  background: transparent;
+  transition: width 0.2s ease, height 0.2s ease, border-color 0.2s ease;
+}
+
+.cursor-dot {
+  width: 8px;
+  height: 8px;
+  background: #b55829;
+  transition: width 0.15s ease, height 0.15s ease;
+}
+
+.cursor-ring.hover {
+  width: 60px;
+  height: 60px;
+  border-color: #c9953a;
+  background: rgba(181, 88, 41, 0.08);
+}
+
+.cursor-dot.hover {
+  width: 4px;
+  height: 4px;
+}
+
+.cursor-ring.clicking {
+  animation: ball 0.3s ease forwards;
+  border-color: #c9953a;
+  background: rgba(201, 149, 58, 0.1);
+}
+
+/* ── SCROLLBAR ────────────────────────────── */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: var(--ink); }
+::-webkit-scrollbar-thumb { background: var(--amber); border-radius: 2px; }
+
+/* ── ART DECO UTILITIES ───────────────────── */
+.deco-line {
+  height: 1px;
+  background: linear-gradient(90deg, transparent 0%, var(--gold) 40%, var(--gold) 60%, transparent 100%);
+}
+
+.deco-line-v {
+  width: 1px;
+  background: linear-gradient(180deg, transparent 0%, var(--gold) 30%, var(--gold) 70%, transparent 100%);
+}
+
+.section-title-deco::before,
+.section-title-deco::after {
+  content: '◆';
+  color: var(--amber);
+  margin: 0 0.75rem;
+  font-size: 0.5em;
+  vertical-align: middle;
+}
+
+.grain-overlay {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.04;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+}
+
+.card-gold {
+  background: rgba(22, 16, 8, 0.9);
+  border: 1px solid var(--border-gold);
+  backdrop-filter: blur(10px);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-gold:hover {
+  border-color: rgba(201, 149, 58, 0.5);
+  box-shadow: 0 0 30px rgba(181, 88, 41, 0.12), 0 4px 40px rgba(0, 0, 0, 0.5);
+}
+
+/* ── SECTION NAV DOTS ─────────────────────── */
+.nav-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--gold-dim);
+  transition: all 0.3s ease;
+}
+
+.nav-dot.active {
+  width: 20px;
+  border-radius: 3px;
+  background: var(--amber);
+}
+
+/* ── TYPING ANIMATION ─────────────────────── */
+@keyframes typing {
+  from { width: 0; }
+  to   { width: 100%; }
+}
+@keyframes blink {
+  50% { border-color: transparent; }
+}
+
+/* ── CORNER ORNAMENTS ─────────────────────── */
+.corner-tl { border-top: 1px solid var(--gold); border-left: 1px solid var(--gold); }
+.corner-tr { border-top: 1px solid var(--gold); border-right: 1px solid var(--gold); }
+.corner-bl { border-bottom: 1px solid var(--gold); border-left: 1px solid var(--gold); }
+.corner-br { border-bottom: 1px solid var(--gold); border-right: 1px solid var(--gold); }
+
+.profile-frame::before {
+  content: '';
+  position: absolute;
+  inset: -8px;
+  border: 1px solid rgba(201, 149, 58, 0.4);
+  border-radius: 2px;
+  pointer-events: none;
+}
+
+.profile-frame::after {
+  content: '';
+  position: absolute;
+  inset: -16px;
+  border: 1px solid rgba(201, 149, 58, 0.15);
+  border-radius: 2px;
+  pointer-events: none;
+}
