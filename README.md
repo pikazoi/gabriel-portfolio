@@ -6,7 +6,7 @@
 
 ## Live Website
 
-🔗 **[https://[your-github-username].github.io/gabriel-portfolio](https://github.com)**
+🔗 **[https://pikazoi.github.io/gabriel-portfolio](https://github.com)**
 
 *(Replace `[your-github-username]` with your actual GitHub username after deployment)*
 
