@@ -23,7 +23,7 @@
 
 ## Description
 
-A personal portfolio website for Gabriel Alde — a creative technologist specializing in 3D animation (Blender), audio engineering (Audacity), and music production (FL Studio). The site features a dark, sophisticated aesthetic inspired by the Reverse: 1999 game interface, complete with art deco design elements, a custom animated cursor, and smooth Framer Motion transitions.
+A personal portfolio website for Gabriel Garalde — a creative technologist specializing in 3D animation (Blender), audio engineering (Audacity), and music production (FL Studio). The site features a dark, sophisticated aesthetic inspired by the Reverse: 1999 game interface, complete with art deco design elements, a custom animated cursor, and smooth Framer Motion transitions.
 
 ---
 
@@ -54,57 +54,6 @@ A personal portfolio website for Gabriel Alde — a creative technologist specia
 - **Fully responsive** — works on mobile, tablet, and desktop
 - **Smooth scroll** — section-linked navigation with active indicators
 
----
-
-## How to Run Locally
-
-```bash
-# 1. Clone the repository
-git clone https://github.com/[your-username]/gabriel-portfolio.git
-cd gabriel-portfolio
-
-# 2. Install dependencies
-npm install
-
-# 3. Start development server
-npm run dev
-
-# 4. Open in browser
-# http://localhost:5173/gabriel-portfolio/
-```
-
----
-
-## How to Deploy to GitHub Pages
-
-### Option A — Automatic (Recommended)
-
-1. Push your code to a GitHub repository named `gabriel-portfolio`
-2. Go to **Settings → Pages**
-3. Under **Source**, select **GitHub Actions**
-4. The site will auto-deploy on every push to `main`
-
-### Option B — Manual
-
-```bash
-npm run deploy
-```
-
----
-
-## Configuration Notes
-
-Before deploying, confirm the `base` in `vite.config.ts` matches your repo name:
-
-```ts
-// vite.config.ts
-export default defineConfig({
-  base: '/gabriel-portfolio/',   // ← must match your GitHub repo name
-  ...
-})
-```
-
----
 
 ## Customization
 
