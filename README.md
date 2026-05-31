@@ -90,5 +90,3 @@ gabriel-portfolio/
 ```
 
 ---
-
-*Designed with ◆ by Gabriel Garalde*
