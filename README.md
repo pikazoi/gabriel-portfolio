@@ -8,7 +8,7 @@
 
 ---
 
-## **Screenshots**:
+## **Screenshot**:
 ![Screenshot](/Screenshot.png)
 
 ---
