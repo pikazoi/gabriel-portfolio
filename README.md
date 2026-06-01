@@ -4,7 +4,7 @@
 
 ## Live Website
 
-🔗 https://pikazoi.github.io/gabriel-portfolio(https://github.com)
+🔗 https://pikazoi.github.io/gabriel-portfolio
 
 
 ---
