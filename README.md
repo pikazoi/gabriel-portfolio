@@ -15,7 +15,7 @@
 
 ## Description
 
-A personal portfolio website for Gabriel Garalde — a creative technologist specializing in 3D animation (Blender), audio engineering (Audacity), and music production (FL Studio). The site features a dark, sophisticated aesthetic inspired by the Reverse: 1999 game interface, complete with art deco design elements, a custom animated cursor, and smooth Framer Motion transitions.
+A personal portfolio website for Gabriel Garalde a creative technologist specializing in 3D animation (Blender), audio engineering (Audacity), and music production (FL Studio). The site features a dark, sophisticated aesthetic inspired by the Reverse: 1999 game interface, complete with art deco design elements, a custom animated cursor, and smooth Framer Motion transitions.
 
 ---
 
@@ -49,10 +49,6 @@ A personal portfolio website for Gabriel Garalde — a creative technologist spe
 ---
 
 
----
-
-
----
 
 ## Project Structure
 
