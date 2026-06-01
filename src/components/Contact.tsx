@@ -81,7 +81,14 @@ function CopyableItem({
 
 export default function Contact() {
   return (
-    <section id="contact" className="relative py-28 overflow-hidden">
+    <motion.section
+      id="contact"
+      className="relative py-28 overflow-hidden"
+      initial={{ opacity: 0, y: 70 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: '-80px' }}
+      transition={{ duration: 0.85, ease: 'easeOut' }}
+    >
       {/* BG */}
       <div className="absolute inset-0 pointer-events-none" style={{
         backgroundImage: `radial-gradient(ellipse at 50% 80%, rgba(181,88,41,0.07) 0%, transparent 60%)`,
@@ -147,6 +154,6 @@ export default function Contact() {
           </p>
         </motion.div>
       </div>
-    </section>
+    </motion.section>
   )
 }

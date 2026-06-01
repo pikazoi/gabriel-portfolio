@@ -38,11 +38,14 @@ export default function Navigation() {
       initial={{ y: -80, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.8, ease: 'easeOut' }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        scrolled
-          ? 'bg-ink/90 backdrop-blur-md border-b border-gold/20'
-          : 'bg-transparent'
-      }`}
+      className="fixed top-0 left-0 right-0 z-50 border-b"
+      style={{
+        backgroundColor: scrolled ? 'rgba(11, 9, 6, 0.92)' : 'transparent',
+        backdropFilter: scrolled ? 'blur(12px)' : 'none',
+        WebkitBackdropFilter: scrolled ? 'blur(12px)' : 'none',
+        borderBottomColor: scrolled ? 'rgba(201, 149, 58, 0.2)' : 'transparent',
+        transition: 'background-color 0.5s ease, border-bottom-color 0.5s ease, backdrop-filter 0.5s ease',
+      }}
     >
       <div className="max-w-7xl mx-auto px-6 lg:px-12 h-16 flex items-center justify-between">
         {/* Logo */}
@@ -76,7 +79,7 @@ export default function Navigation() {
           ))}
         </div>
 
-        {/* Mobile menu indicator */}
+        {/* Mobile nav dots */}
         <div className="flex md:hidden items-center gap-1.5">
           {links.map((l) => (
             <a key={l.href} href={l.href}>

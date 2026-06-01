@@ -1,6 +1,4 @@
 import { motion } from 'framer-motion'
-import { useRef } from 'react'
-import { Camera } from 'lucide-react'
 
 const fadeUp = (delay = 0) => ({
   initial: { opacity: 0, y: 40 },
@@ -10,24 +8,14 @@ const fadeUp = (delay = 0) => ({
 })
 
 export default function Hero() {
-  const inputRef = useRef<HTMLInputElement>(null)
-
-  const handleImageClick = () => inputRef.current?.click()
-
-  const handleImageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const file = e.target.files?.[0]
-    if (!file) return
-    const url = URL.createObjectURL(file)
-    const img = document.getElementById('profile-img') as HTMLImageElement
-    if (img) { img.src = url; img.style.display = 'block' }
-    const placeholder = document.getElementById('img-placeholder')
-    if (placeholder) placeholder.style.display = 'none'
-  }
-
   return (
-    <section
+    <motion.section
       id="profile"
       className="relative min-h-screen flex items-center overflow-hidden"
+      initial={{ opacity: 0, y: 60 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: '-80px' }}
+      transition={{ duration: 0.9, ease: 'easeOut' }}
     >
       {/* BG Pattern */}
       <div className="absolute inset-0 bg-ink">
@@ -37,7 +25,6 @@ export default function Hero() {
                               radial-gradient(circle at 80% 30%, rgba(201,149,58,0.04) 0%, transparent 50%)`,
           }}
         />
-        {/* horizontal art deco lines */}
         <div className="absolute top-1/3 left-0 right-0 h-px opacity-10"
           style={{ background: 'linear-gradient(90deg, transparent, var(--gold), transparent)' }} />
         <div className="absolute top-2/3 left-0 right-0 h-px opacity-10"
@@ -54,15 +41,10 @@ export default function Hero() {
             initial={{ opacity: 0, x: -60 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 1, ease: 'easeOut' }}
+            transition={{ duration: 1, ease: 'easeOut', delay: 0.1 }}
             className="flex justify-center"
           >
-            <div
-              className="relative cursor-pointer profile-frame"
-              onClick={handleImageClick}
-              data-hover="true"
-              title="Click to upload your profile photo"
-            >
+            <div className="relative">
               {/* Outer decorative border */}
               <div className="absolute -inset-3 border border-gold/20 rounded-sm pointer-events-none" />
               {/* Corner ornaments */}
@@ -71,59 +53,27 @@ export default function Hero() {
               <div className="absolute -bottom-3 -left-3 w-5 h-5 corner-bl" />
               <div className="absolute -bottom-3 -right-3 w-5 h-5 corner-br" />
 
-              {/* Image container */}
-              <div className="w-72 h-80 md:w-80 md:h-96 bg-ink-3 border border-gold/30 rounded-sm overflow-hidden relative">
-                {/* Placeholder */}
-                <div
-                  id="img-placeholder"
-                  className="absolute inset-0 flex flex-col items-center justify-center gap-4"
-                >
-                  <div className="w-16 h-16 rounded-full border border-gold/40 flex items-center justify-center text-gold/50">
-                    <Camera size={28} strokeWidth={1.5} />
-                  </div>
-                  <p className="font-bodoni text-xs tracking-widest uppercase text-parchment-dim text-center leading-relaxed px-6">
-                    Click to upload<br />profile photo
-                  </p>
-                </div>
-
-                {/* Actual image */}
+              {/* Image */}
+              <div className="w-72 h-80 md:w-80 md:h-96 border border-gold/30 rounded-sm overflow-hidden">
                 <img
-                  id="profile-img"
-                  src=""
-                  alt="Profile"
-                  className="w-full h-full object-cover hidden"
+                  src={`${import.meta.env.BASE_URL}gprofile.jpg`}
+                  alt="Gabriel Alde"
+                  className="w-full h-full object-cover"
                 />
-
-                {/* Hover overlay */}
-                <div className="absolute inset-0 bg-amber/0 hover:bg-amber/5 transition-colors duration-300 flex items-end justify-center pb-4 opacity-0 hover:opacity-100">
-                  <span className="font-bodoni text-xs tracking-widest text-parchment uppercase">
-                    Change Photo
-                  </span>
-                </div>
               </div>
-
-              <input
-                ref={inputRef}
-                type="file"
-                accept="image/*"
-                className="hidden"
-                onChange={handleImageChange}
-              />
             </div>
           </motion.div>
 
           {/* ── TEXT CONTENT ─────────────────────── */}
           <div className="space-y-8">
-            {/* Label */}
-            <motion.div {...fadeUp(0.1)} className="flex items-center gap-4">
+            <motion.div {...fadeUp(0.15)} className="flex items-center gap-4">
               <div className="h-px w-10 bg-amber" />
               <span className="font-bodoni text-xs tracking-[0.3em] uppercase text-amber">
                 Portfolio
               </span>
             </motion.div>
 
-            {/* Name */}
-            <motion.div {...fadeUp(0.2)} className="space-y-2">
+            <motion.div {...fadeUp(0.25)} className="space-y-2">
               <h1
                 className="font-bodoni font-black text-5xl md:text-6xl lg:text-7xl text-parchment leading-[0.9]"
                 style={{ letterSpacing: '-0.01em' }}
@@ -138,28 +88,25 @@ export default function Hero() {
                   color: 'transparent',
                 }}
               >
-                Garalde
+                Alde
               </h1>
             </motion.div>
 
-            {/* Divider */}
-            <motion.div {...fadeUp(0.3)} className="flex items-center gap-4">
+            <motion.div {...fadeUp(0.35)} className="flex items-center gap-4">
               <div className="deco-line flex-1" style={{ maxWidth: 160 }} />
               <span className="text-amber text-xs">◆</span>
               <div className="deco-line flex-1" style={{ maxWidth: 40 }} />
             </motion.div>
 
-            {/* Title */}
             <motion.div {...fadeUp(0.4)}>
               <p className="font-bodoni text-base md:text-lg tracking-[0.12em] uppercase text-parchment-dim">
-                3D Animator · Audio Producer
+                3D Animator · Audio Engineer
               </p>
               <p className="font-bodoni text-base md:text-lg tracking-[0.12em] uppercase text-parchment-dim">
                 & Creative Technologist
               </p>
             </motion.div>
 
-            {/* Description */}
             <motion.p
               {...fadeUp(0.5)}
               className="font-bodoni text-sm text-parchment/60 leading-relaxed max-w-md"
@@ -168,7 +115,6 @@ export default function Hero() {
               Crafting sound, motion, and digital experience — one frame and one beat at a time.
             </motion.p>
 
-            {/* CTA Buttons */}
             <motion.div {...fadeUp(0.6)} className="flex items-center gap-4 pt-2 flex-wrap">
               <a
                 href="#projects"
@@ -204,6 +150,6 @@ export default function Hero() {
           className="w-px h-10 bg-gradient-to-b from-gold/40 to-transparent"
         />
       </motion.div>
-    </section>
+    </motion.section>
   )
 }

@@ -87,7 +87,14 @@ export default function Skills() {
   const inView = useInView(ref, { once: true, margin: '-100px' })
 
   return (
-    <section id="skills" className="relative py-28 overflow-hidden">
+    <motion.section
+      id="skills"
+      className="relative py-28 overflow-hidden"
+      initial={{ opacity: 0, y: 70 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: '-80px' }}
+      transition={{ duration: 0.85, ease: 'easeOut' }}
+    >
       {/* BG accent */}
       <div className="absolute right-0 top-0 bottom-0 w-px deco-line-v opacity-20" />
       <div className="absolute left-0 top-0 bottom-0 w-px deco-line-v opacity-20" />
@@ -207,6 +214,6 @@ export default function Skills() {
           ))}
         </div>
       </div>
-    </section>
+    </motion.section>
   )
 }
