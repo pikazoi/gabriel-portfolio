@@ -138,7 +138,7 @@ export default function Hero() {
                   color: 'transparent',
                 }}
               >
-                Alde
+                Garalde
               </h1>
             </motion.div>
 
