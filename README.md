@@ -9,7 +9,8 @@
 ---
 
 ## **Screenshots**:
-(/Screenshot.png)
+![Screenshot](/Screenshot.png)
+
 ---
 
 ## Description
