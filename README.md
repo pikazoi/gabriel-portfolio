@@ -1,30 +1,20 @@
-# Gabriel Alde — Personal Portfolio
-
-> A refined, art deco-inspired personal portfolio website showcasing creative work in 3D animation, audio production, and music creation.
+# Gabriel Garalde — Personal Portfolio
 
 ---
 
 ## Live Website
 
-🔗 **[https://[your-github-username].github.io/gabriel-portfolio](https://github.com)**
-
-*(Replace `[your-github-username]` with your actual GitHub username after deployment)*
+🔗 **https://pikazoi.github.io/gabriel-portfolio**
 
 ---
 
-## Screenshot
 
-```
-[ Add a screenshot of your website here after deployment ]
-```
-
-> To add a screenshot: Take a screenshot, save it as `screenshot.png` in the project root, then update this file.
 
 ---
 
 ## Description
 
-A personal portfolio website for Gabriel Alde — a creative technologist specializing in 3D animation (Blender), audio engineering (Audacity), and music production (FL Studio). The site features a dark, sophisticated aesthetic inspired by the Reverse: 1999 game interface, complete with art deco design elements, a custom animated cursor, and smooth Framer Motion transitions.
+A personal portfolio website for Gabriel Garalde — a creative technologist specializing in 3D animation (Blender), audio engineering (Audacity), and music production (FL Studio). The site features a dark, sophisticated aesthetic inspired by the Reverse: 1999 game interface, complete with art deco design elements, a custom animated cursor, and smooth Framer Motion transitions.
 
 ---
 
@@ -57,65 +47,9 @@ A personal portfolio website for Gabriel Alde — a creative technologist specia
 
 ---
 
-## How to Run Locally
-
-```bash
-# 1. Clone the repository
-git clone https://github.com/[your-username]/gabriel-portfolio.git
-cd gabriel-portfolio
-
-# 2. Install dependencies
-npm install
-
-# 3. Start development server
-npm run dev
-
-# 4. Open in browser
-# http://localhost:5173/gabriel-portfolio/
-```
 
 ---
 
-## How to Deploy to GitHub Pages
-
-### Option A — Automatic (Recommended)
-
-1. Push your code to a GitHub repository named `gabriel-portfolio`
-2. Go to **Settings → Pages**
-3. Under **Source**, select **GitHub Actions**
-4. The site will auto-deploy on every push to `main`
-
-### Option B — Manual
-
-```bash
-npm run deploy
-```
-
----
-
-## Configuration Notes
-
-Before deploying, confirm the `base` in `vite.config.ts` matches your repo name:
-
-```ts
-// vite.config.ts
-export default defineConfig({
-  base: '/gabriel-portfolio/',   // ← must match your GitHub repo name
-  ...
-})
-```
-
----
-
-## Customization
-
-| What | Where |
-|---|---|
-| Profile photo | Click the framed box in the Hero section |
-| Project videos | Click any project card → paste YouTube URL |
-| Name / title | `src/components/Hero.tsx` |
-| Contact info | `src/components/Contact.tsx` |
-| Colors | `src/index.css` CSS variables + `tailwind.config.js` |
 
 ---
 
@@ -144,5 +78,3 @@ gabriel-portfolio/
 ```
 
 ---
-
-*Designed with ◆ by Gabriel Alde*
