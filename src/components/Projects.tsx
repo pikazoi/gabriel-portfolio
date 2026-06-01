@@ -50,13 +50,9 @@ const projects = [
 
 export default function Projects() {
   return (
-    <motion.section
+    <section
       id="projects"
       className="relative py-28 overflow-hidden"
-      initial={{ opacity: 0, y: 70 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: '-80px' }}
-      transition={{ duration: 0.85, ease: 'easeOut' }}
     >
       <div className="absolute inset-0 pointer-events-none" style={{
         backgroundImage: `radial-gradient(circle at 70% 60%, rgba(181,88,41,0.05) 0%, transparent 60%)`,
@@ -139,6 +135,6 @@ export default function Projects() {
           ))}
         </div>
       </div>
-    </motion.section>
+    </section>
   )
 }

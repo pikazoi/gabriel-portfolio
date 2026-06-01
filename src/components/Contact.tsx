@@ -81,13 +81,9 @@ function CopyableItem({
 
 export default function Contact() {
   return (
-    <motion.section
+    <section
       id="contact"
       className="relative py-28 overflow-hidden"
-      initial={{ opacity: 0, y: 70 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: '-80px' }}
-      transition={{ duration: 0.85, ease: 'easeOut' }}
     >
       {/* BG */}
       <div className="absolute inset-0 pointer-events-none" style={{
@@ -150,10 +146,10 @@ export default function Contact() {
             <div className="deco-line w-24" />
           </div>
           <p className="font-bodoni text-xs tracking-[0.3em] uppercase text-parchment-dim/50">
-            Gabriel Alde · Portfolio {new Date().getFullYear()}
+            Gabriel Garalde · Portfolio {new Date().getFullYear()}
           </p>
         </motion.div>
       </div>
-    </motion.section>
+    </section>
   )
 }
