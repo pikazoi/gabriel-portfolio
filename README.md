@@ -37,7 +37,6 @@ A personal portfolio website for Gabriel Garalde a creative technologist special
 ## Features
 
 - **Custom animated cursor** — dual-element cursor with lag effect and hover/click states
-- **Profile image uploader** — click the frame to upload your photo
 - **Skills section** — animated 100 WPM counter + skill bars
 - **Projects** — expandable cards with YouTube video embed support
 - **Education** — STI College Tanay displayed in an elegant timeline layout
